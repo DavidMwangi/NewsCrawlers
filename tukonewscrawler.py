@@ -1,38 +1,38 @@
 import newspaper
 
-dailynews = newspaper.build('https://www.tuko.co.ke/', memoize_articles=False)
+tukonews = newspaper.build('https://www.tuko.co.ke/', memoize_articles=False)
 #memoize_articles=False parameter opts out of default cache elimination
 
-print(dailynews.brand.capitalize() + ': ' + dailynews.description)
+print(tukonews.brand.capitalize() + ': ' + tukonews.description)
 
 
 #CACHING ARTICLE NUMBER
 
-print('\nDaily Nation Cached Articles\n')
+print('\nTuko Cached Articles\n')
 
-print(dailynews.size())
+print(tukonews.size())
 
 
 #EXTRACTING ARTICLE URLS
 
 
-for article in dailynews.articles:
+for article in tukonews.articles:
 
     print(article.url)
 
 
 #EXTRACTING SOURCE CATEGORIES
 
-print('\nDaily Nation Categories\n')
+print('\nTuko Categories\n')
 
-for category in dailynews.category_urls():
+for category in tukonews.category_urls():
 
     print(category)
 
 #EXTRACTING SOURCE FEEDS
 
-print('\nDaily Nation RSS Feeds\n')
+print('\nTuko RSS Feeds\n')
 
-for feed_url in dailynews.feed_urls():
+for feed_url in tukonews.feed_urls():
 
     print (feed_url)
